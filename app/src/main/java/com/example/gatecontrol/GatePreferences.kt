@@ -10,6 +10,7 @@ object GatePreferences {
     private const val KEY_CONTACT_LOOKUP_KEY = "gate_contact_lookup_key"
     private const val KEY_CONTACT_PHONE_DATA_ID = "gate_contact_phone_data_id"
     private const val KEY_CONTACT_NAME = "gate_contact_name"
+    private const val KEY_EDGE_ENABLED = "edge_swipe_enabled"
 
     fun getPhoneNumber(context: Context): String = prefs(context)
         .getString(KEY_PHONE_NUMBER, "")?.trim().orEmpty()
@@ -58,6 +59,13 @@ object GatePreferences {
         .getString(KEY_CONTACT_NAME, "").orEmpty()
 
     fun usesContact(context: Context): Boolean = getContactLookupKey(context).isNotBlank()
+
+    fun isEdgeEnabled(context: Context): Boolean =
+        prefs(context).getBoolean(KEY_EDGE_ENABLED, false)
+
+    fun setEdgeEnabled(context: Context, enabled: Boolean) {
+        prefs(context).edit().putBoolean(KEY_EDGE_ENABLED, enabled).apply()
+    }
 
     private fun prefs(context: Context) =
         context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)

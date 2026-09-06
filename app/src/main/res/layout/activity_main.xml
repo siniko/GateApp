@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,9 +21,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Link the gate to a phone contact or enter the number manually. If linked, changing the number in Contacts automatically changes the number used by the widget."
+            android:text="Configure the gate once, then use a swipe from the right edge instead of keeping a widget on screen."
             android:textSize="16sp"
             android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/enableEdgeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable edge swipe control" />
+
+        <Button
+            android:id="@+id/disableEdgeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Disable edge swipe control" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="When enabled: swipe from the middle-right edge toward the centre. OPEN/CLOSE always requires confirmation before sending."
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/chooseContactButton"
