@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Gate Control</string>
+    <string name="widget_description">Open or close the home gate by SMS</string>
+</resources>
